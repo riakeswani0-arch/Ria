@@ -1,0 +1,104 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Serif:wght@600;700&family=Space+Grotesk:wght@500;700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --color-surface: #121318;
+  --color-surface-dim: #121318;
+  --color-surface-bright: #38393f;
+  --color-surface-container-lowest: #0d0e13;
+  --color-surface-container-low: #1a1b21;
+  --color-surface-container: #1e1f25;
+  --color-surface-container-high: #292a2f;
+  --color-surface-container-highest: #34343a;
+  --color-on-surface: #e3e1e9;
+  --color-on-surface-variant: #c7c5cd;
+  --color-inverse-surface: #e3e1e9;
+  --color-inverse-on-surface: #2f3036;
+  --color-outline: #919097;
+  --color-outline-variant: #46464c;
+  --color-surface-tint: #c2c5de;
+  --color-primary: #c2c5de;
+  --color-on-primary: #2b2f43;
+  --color-primary-container: #25293c;
+  --color-on-primary-container: #8c90a7;
+  --color-inverse-primary: #5a5d73;
+  --color-secondary: #bbc3ff;
+  --color-on-secondary: #001d93;
+  --color-secondary-container: #0231de;
+  --color-on-secondary-container: #b1bbff;
+  --color-tertiary: #ffb3b3;
+  --color-on-tertiary: #680014;
+  --color-tertiary-container: #5c0011;
+  --color-on-tertiary-container: #ff5360;
+  --color-error: #ffb4ab;
+  --color-on-error: #690005;
+  --color-error-container: #93000a;
+  --color-on-error-container: #ffdad6;
+  --color-primary-fixed: #dee1fb;
+  --color-primary-fixed-dim: #c2c5de;
+  --color-on-primary-fixed: #161b2d;
+  --color-on-primary-fixed-variant: #42465a;
+  --color-secondary-fixed: #dee0ff;
+  --color-secondary-fixed-dim: #bbc3ff;
+  --color-on-secondary-fixed: #000f5d;
+  --color-on-secondary-fixed-variant: #002ccd;
+  --color-tertiary-fixed: #ffdad9;
+  --color-tertiary-fixed-dim: #ffb3b3;
+  --color-on-tertiary-fixed: #400009;
+  --color-on-tertiary-fixed-variant: #920021;
+  --color-background: #121318;
+  --color-on-background: #e3e1e9;
+  --color-surface-variant: #34343a;
+
+  --font-serif: "Noto Serif", serif;
+  --font-sans: "Inter", sans-serif;
+  --font-mono: "Space Grotesk", monospace;
+  --font-data: "Space Grotesk", sans-serif;
+
+  --radius-sm: 0.125rem;
+  --radius-md: 0.375rem;
+  --radius-lg: 0.5rem;
+  --radius-xl: 0.75rem;
+}
+
+@layer base {
+  body {
+    @apply bg-background text-on-background font-sans;
+  }
+}
+
+@layer components {
+  .glass-panel {
+    @apply bg-[rgba(37,41,60,0.6)] backdrop-blur-xl border border-white/10;
+  }
+  
+  .surgical-glow {
+    box-shadow: 0 0 15px -5px rgba(14, 165, 233, 0.4);
+  }
+
+  .neon-pulse {
+    text-shadow: 0 0 8px rgba(186, 195, 255, 0.6);
+  }
+}
+
+.hotspot-pulse {
+  box-shadow: 0 0 0 0 rgba(194, 197, 222, 0.4);
+  animation: pulse-ring 2s infinite;
+}
+
+@keyframes pulse-ring {
+  0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(194, 197, 222, 0.7); }
+  70% { transform: scale(1); box-shadow: 0 0 0 10px rgba(194, 197, 222, 0); }
+  100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(194, 197, 222, 0); }
+}
+
+.isometric-view {
+  transform: rotateX(45deg) rotateZ(-45deg);
+  transform-style: preserve-3d;
+}
+
+.grid-pattern {
+  background-image: linear-gradient(rgba(14, 165, 233, 0.05) 1px, transparent 1px),
+                    linear-gradient(90deg, rgba(14, 165, 233, 0.05) 1px, transparent 1px);
+  background-size: 40px 40px;
+}
